@@ -6,7 +6,7 @@
 /*   By: vbachele <vbachele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 18:26:09 by vbachele          #+#    #+#             */
-/*   Updated: 2022/05/21 18:29:39 by vbachele         ###   ########.fr       */
+/*   Updated: 2022/05/21 19:04:28 by vbachele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ Dummy::Dummy(void) : ATarget("Target Practice Dummy")
 	std::cout << "Dummy constructor called" << std::endl;
 }
 
-Dummy::Dummy(Dummy const &old_obj) : ATarget("Target Practice Dummy")
+ATarget *Dummy::clone() const
 {
-	std::cout << "Dummy copy constructor called" << std::endl;
-	*this = old_obj;
+    return (new Dummy());
 }
 
 Dummy::~Dummy(void)

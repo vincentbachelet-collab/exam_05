@@ -6,7 +6,7 @@
 /*   By: vbachele <vbachele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 17:24:25 by vbachele          #+#    #+#             */
-/*   Updated: 2022/05/21 17:30:34 by vbachele         ###   ########.fr       */
+/*   Updated: 2022/05/21 18:59:19 by vbachele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Fwoosh : public ASpell
 {
 public :
 	Fwoosh();
-	Fwoosh(Fwoosh const &old_obj);
+	virtual ASpell *clone() const;
 	~Fwoosh();
 
 protected :

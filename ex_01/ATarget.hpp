@@ -6,7 +6,7 @@
 /*   By: vbachele <vbachele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 16:55:01 by vbachele          #+#    #+#             */
-/*   Updated: 2022/05/21 18:42:38 by vbachele         ###   ########.fr       */
+/*   Updated: 2022/05/21 18:57:16 by vbachele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public :
 	//members functions;
 	std::string const getType() const;
 	void 		const getHitSpell(ASpell const &spell) const;
+	virtual ATarget *clone() const = 0;
 protected:
 	std::string _type;
 };

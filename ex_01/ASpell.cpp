@@ -6,11 +6,12 @@
 /*   By: vbachele <vbachele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 16:45:24 by vbachele          #+#    #+#             */
-/*   Updated: 2022/05/21 18:14:23 by vbachele         ###   ########.fr       */
+/*   Updated: 2022/05/21 19:03:05 by vbachele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ASpell.hpp"
+#include "Fwoosh.hpp"
 
 ASpell::ASpell(std::string name, std::string effects)
 				: _name(name), _effects(effects)
@@ -23,6 +24,7 @@ ASpell::ASpell(ASpell const &old_obj)
 	std::cout << "copy constructor called" << std::endl;
 	*this = old_obj;
 }
+
 
 ASpell::~ASpell(void)
 {
@@ -40,7 +42,7 @@ std::string ASpell::getEffects(void) const
 	return (this->_effects);
 }
 
-void		ASpell::launchSpell(ATarget const &target) const
+ASpell *Fwoosh::clone() const
 {
-	target.getHitSpell(*this);
+    return (new Fwoosh());
 }
