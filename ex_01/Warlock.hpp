@@ -6,7 +6,7 @@
 /*   By: vbachele <vbachele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 11:33:09 by vbachele          #+#    #+#             */
-/*   Updated: 2022/05/21 18:50:41 by vbachele         ###   ########.fr       */
+/*   Updated: 2022/05/22 16:58:03 by vbachele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define WARLOCK_HPP
 #include "iostream"
 #include "ASpell.hpp"
+#include "ATarget.hpp"
 #include "map"
 
 class ASpell;
@@ -33,13 +34,14 @@ public:
 	void		setTitle(std::string const &new_title);
 	void		introduce(void) const;
 	void		learnSpell(ASpell *spell);
-	void		forgetSpell(std::string const &spell);
-	void		launchSpell(std::string const &spell);
+	void		forgetSpell(std::string spell);
+	void		launchSpell(std::string spell, ATarget const &target);
 
 private:
 	std::string _name;
 	std::string _title;
-	std::map<std::string, ASpell *> _arr;
+	std::map<std::string, ASpell *> _arr; // I init a map with a key , value pair
+	// I will search the string with map and it will init the spell
 };
 
 #endif

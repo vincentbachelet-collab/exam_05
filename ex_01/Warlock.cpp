@@ -6,7 +6,7 @@
 /*   By: vbachele <vbachele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 11:33:08 by vbachele          #+#    #+#             */
-/*   Updated: 2022/05/21 18:52:02 by vbachele         ###   ########.fr       */
+/*   Updated: 2022/05/22 17:01:07 by vbachele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,24 @@ void 			Warlock::introduce() const {
 
 void			Warlock::learnSpell(ASpell *spell)
 {
+	// Here I store the spell directly, insert allow to add in map<
 	if (spell)
 		_arr.insert(std::pair<std::string, ASpell *>(spell->getName(), spell->clone()));
+}
+
+void			Warlock::launchSpell(std::string spell, ATarget const &target)
+{
+	ASpell *bigSpell = _arr[spell];
+	if (bigSpell) // rajouter l'erreur exit
+	{
+		target.getHitSpell(*bigSpell);
+	}
+}
+
+void			Warlock::forgetSpell(std::string spell_ref)
+{
+	//if (this->_arr.count(spell_ref))
+	//{
+	this->_arr.erase(spell_ref);
+	//}
 }
